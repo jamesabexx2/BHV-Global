@@ -10,10 +10,7 @@ const nextConfig = {
       },
     ],
   },
-  i18n: {
-    locales: ['en', 'es'],
-    defaultLocale: 'en',
-  },
+  // Eliminamos la configuración de i18n que es incompatible con App Router
 };
 
 export default nextConfig;
