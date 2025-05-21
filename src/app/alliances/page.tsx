@@ -87,7 +87,7 @@ const AlliancesPage = () => {
               Become a Partner
             </h2>
             <p className="text-lg text-[#666666] leading-relaxed mb-8">
-              Interested in partnering with BHV Global? We're always looking for strategic 
+              Interested in partnering with BHV Global? We&apos;re always looking for strategic 
               partnerships that can enhance our distribution capabilities and create mutual value.
             </p>
             <a 

@@ -18,17 +18,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let translation: any = translations[language];
+    let current: Record<string, unknown> = translations[language];
     
     for (const k of keys) {
-      if (translation && translation[k]) {
-        translation = translation[k];
+      if (current && typeof current === 'object' && k in current) {
+        current = current[k] as Record<string, unknown>;
       } else {
         return key; // Return the key if translation not found
       }
     }
     
-    return translation;
+    return typeof current === 'string' ? current : key;
   };
 
   return (
