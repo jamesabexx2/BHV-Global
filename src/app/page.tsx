@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px]">
+      <section className="relative w-full h-[350px]">
         <Image
           src="/images/hero/home.jpg"
           alt="BHV Global Hero Background"

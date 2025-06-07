@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero section */}
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[350px]">
               <Image
                 src="/images/hero/contact.jpeg"
                 alt="Contact Us"

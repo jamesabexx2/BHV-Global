@@ -9,7 +9,7 @@ export default function MissionPage() {
   return (
     <div className="min-h-screen">
       {/* Hero section */}
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[350px]">
   <Image
     src="/images/hero/our-mission.jpeg"
     alt="Our Mission"
