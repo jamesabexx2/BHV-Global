@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe } from 'lucide-react';
 
@@ -15,9 +16,9 @@ const Header = () => {
   return (
     <header className="w-full">
       {/* Top banner */}
-      <div className="w-full bg-[#4169E1] text-white py-2 px-4 text-center">
+      <div className="w-full bg-[#0B3C5D] text-white py-2 px-4 text-center">
         <p className="text-sm md:text-base">
-          {t('heroSubtitle')}
+          Where Brands Meet Business
         </p>
       </div>
       
@@ -27,34 +28,31 @@ const Header = () => {
         <div className="w-[150px] h-[50px] relative">
           <Link href="/">
             <div className="w-full h-full flex items-center">
-              <span className="text-xl font-bold">BHV Global</span>
+              <Image src="/bhvlogo.jpg" alt="BHV GLOBAL" width={150} height={50} className="object-contain" />
             </div>
           </Link>
         </div>
         
         {/* Navigation links */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-black hover:text-[#4169E1] transition-colors">
-            {t('home')}
+          <Link href="/" className="font-medium text-white hover:text-blue-200 transition-colors">
+            Home
           </Link>
-          <Link href="/mission" className="text-black hover:text-[#4169E1] transition-colors">
-            {t('mission')}
+          <Link href="/mission" className="font-medium text-white hover:text-blue-200 transition-colors">
+            Our Mission
           </Link>
-          <Link href="/alliances" className="text-black hover:text-[#4169E1] transition-colors">
-            {t('alliances')}
+          <Link href="/ungating" className="font-medium text-white hover:text-blue-200 transition-colors">
+            Ungating
           </Link>
-          <Link href="/brands" className="text-black hover:text-[#4169E1] transition-colors">
-            {t('brands')}
-          </Link>
-          <Link href="/contact" className="text-black hover:text-[#4169E1] transition-colors">
-            {t('contactUs')}
+          <Link href="/contact" className="font-medium text-white hover:text-blue-200 transition-colors">
+            Contact Us
           </Link>
         </nav>
         
         {/* Language selector */}
         <button 
           onClick={toggleLanguage}
-          className="flex items-center space-x-1 text-black hover:text-[#4169E1] transition-colors"
+          className="flex items-center space-x-1 font-medium text-white hover:text-blue-200 transition-colors"
         >
           <Globe size={20} />
           <span>{language === 'en' ? 'ES' : 'EN'}</span>
