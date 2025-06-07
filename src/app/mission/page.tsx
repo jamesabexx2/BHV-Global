@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function MissionPage() {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen">
       {/* Hero section */}
@@ -18,10 +22,10 @@ export default function MissionPage() {
   <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
     <div className="text-center max-w-4xl">
       <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-        Our Mission
+        {t('missionTitle')}
       </h1>
       <p className="text-xl text-white">
-        Empowering retailers with premium wholesale fashion
+        {t('missionPage.heroSubtitle')}
       </p>
     </div>
   </div>
@@ -33,19 +37,19 @@ export default function MissionPage() {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                At BHV GLOBAL, we connect the world's most sought-after fashion brands with businesses that sell.
+                {t('missionPage.p1')}
               </p>
               
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Our mission is to provide seamless, reliable wholesale solutions — built on trust, efficiency, and deep industry insight.
+                {t('missionPage.p2')}
               </p>
               
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                From logistics to sourcing, we do it all with style, purpose, and a relentless commitment to your growth.
+                {t('missionPage.p3')}
               </p>
               
               <p className="text-xl text-gray-700 leading-relaxed">
-                Headquartered in the U.S., we serve clients across North America and select international markets.
+                {t('missionPage.p4')}
               </p>
             </div>
           </div>

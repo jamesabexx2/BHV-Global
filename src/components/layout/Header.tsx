@@ -18,7 +18,7 @@ const Header = () => {
       {/* Top banner */}
       <div className="w-full bg-[#0B3C5D] text-white py-2 px-4 text-center">
         <p className="text-sm md:text-base">
-          Where Brands Meet Business
+          {t('headerBannerText')}
         </p>
       </div>
       
@@ -36,16 +36,16 @@ const Header = () => {
         {/* Navigation links */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className="font-medium text-white hover:text-blue-200 transition-colors">
-            Home
+            {t('navHome')}
           </Link>
           <Link href="/mission" className="font-medium text-white hover:text-blue-200 transition-colors">
-            Our Mission
+            {t('mission')}
           </Link>
           <Link href="/ungating" className="font-medium text-white hover:text-blue-200 transition-colors">
-            Ungating
+            {t('ungating')}
           </Link>
           <Link href="/contact" className="font-medium text-white hover:text-blue-200 transition-colors">
-            Contact Us
+            {t('contactUs')}
           </Link>
         </nav>
         

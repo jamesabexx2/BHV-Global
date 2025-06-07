@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function UngatingPage() {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen">
       {/* Hero section */}
@@ -18,10 +22,10 @@ export default function UngatingPage() {
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Ungating Services
+              {t('ungatingPage.title')}
             </h1>
             <p className="text-xl text-white">
-              Join our exclusive mailing list and gain access to expert support, documentation, and early brand opportunities.
+              {t('ungatingPage.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -32,20 +36,20 @@ export default function UngatingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Looking to get ungated for major fashion brands on Amazon?
+              {t('ungatingPage.p1')}
             </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-16">
-              Join our exclusive mailing list and gain access to expert support, documentation, and early brand opportunities.
+              {t('ungatingPage.heroSubtitle')}
             </p>
             
             {/* Subscription form */}
             <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 text-black">Subscribe to Our Ungating List</h3>
+              <h3 className="text-2xl font-bold mb-6 text-black">{t('ungatingPage.formTitle')}</h3>
               <form className="space-y-6 max-w-md mx-auto">
                 <div>
                   <input
                     type="text"
-                    placeholder="Full Name"
+                    placeholder={t('ungatingPage.formFullNamePlaceholder')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0B3C5D]"
                   />
                 </div>
@@ -53,7 +57,7 @@ export default function UngatingPage() {
                 <div>
                   <input
                     type="email"
-                    placeholder="Email Address"
+                    placeholder={t('ungatingPage.formEmailPlaceholder')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0B3C5D]"
                   />
                 </div>
@@ -63,14 +67,14 @@ export default function UngatingPage() {
                     type="submit"
                     className="w-full bg-[#0B3C5D] text-white py-3 px-4 rounded-md hover:bg-[#0A2F47] transition-colors font-medium"
                   >
-                    Subscribe
+                    {t('ungatingPage.formSubmitButton')}
                   </button>
                 </div>
               </form>
               
               <div className="mt-8 text-center">
                 <p className="text-gray-600">
-                  Or contact us directly at: <a href="mailto:info@bhvglobal.com" className="text-[#0B3C5D] font-medium hover:underline">info@bhvglobal.com</a>
+                  {t('ungatingPage.formContactDirectly')} <a href="mailto:info@bhvglobal.com" className="text-[#0B3C5D] font-medium hover:underline">info@bhvglobal.com</a>
                 </p>
               </div>
             </div>

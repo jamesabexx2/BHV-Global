@@ -1,7 +1,10 @@
-import Image from 'next/image';
+'use client';
 
-// Página principal simple que no depende de componentes cliente
+import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Home() {
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen">
@@ -19,13 +22,13 @@ export default function Home() {
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Where Brands Meet Business
+              {t('headerBannerText')}
             </h1>
             <h2 className="text-2xl md:text-3xl text-white mb-6">
-              BHV GLOBAL – Wholesale Fashion, Delivered
+              {t('home.hero.subtitle')}
             </h2>
             <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
-              Powering resellers and retailers with direct access to premium shoes, bags, and apparel — trusted by top brands, shipped with precision.
+              {t('home.hero.description')}
             </p>
           </div>
         </div>
@@ -36,17 +39,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-black text-center">
-              What We Do
+              {t('home.whatWeDo.title')}
             </h2>
             <div className="text-lg text-gray-700 leading-relaxed space-y-6">
               <p>
-                BHV GLOBAL is a U.S.-based wholesale distributor specializing in brand-name footwear, fashion, and accessories.
+                {t('home.whatWeDo.p1')}
               </p>
               <p>
-                We help Amazon sellers, fashion retailers, and B2B buyers source fast-moving inventory with total confidence.
+                {t('home.whatWeDo.p2')}
               </p>
               <p className="font-medium">
-                From curated selections to bulk orders, we simplify wholesale — so you can focus on selling.
+                {t('home.whatWeDo.p3')}
               </p>
             </div>
           </div>
@@ -58,10 +61,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-black">
-              Brands We Work With
+              {t('home.brands.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We partner with premium footwear and fashion brands to deliver authentic products to retailers worldwide.
+              {t('home.brands.subtitle')}
             </p>
           </div>
           
@@ -77,8 +80,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 bg-white">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Premium Footwear</h3>
-                <p className="text-gray-600">From athletic performance to luxury casual, we source authentic footwear from the world's most trusted brands.</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('home.brands.item1.title')}</h3>
+                <p className="text-gray-600">{t('home.brands.item1.description')}</p>
               </div>
             </div>
             
@@ -93,8 +96,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 bg-white">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Fashion & Accessories</h3>
-                <p className="text-gray-600">Curated collections of apparel, bags, and accessories from leading fashion brands for your retail business.</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('home.brands.item2.title')}</h3>
+                <p className="text-gray-600">{t('home.brands.item2.description')}</p>
               </div>
             </div>
           </div>
@@ -105,16 +108,16 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-black">
-            Ready to grow your business with premium wholesale fashion?
+            {t('home.cta.title')}
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-            Connect with our team to discuss your inventory needs and discover how BHV GLOBAL can support your retail success.
+            {t('home.cta.subtitle')}
           </p>
           <a 
             href="/contact" 
             className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-colors text-lg font-medium"
           >
-            Contact Us Now
+            {t('home.cta.button')}
           </a>
         </div>
       </section>

@@ -33,7 +33,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-center">
           <p className="text-gray-800 text-sm">
-            BHV GLOBAL &copy; {new Date().getFullYear()}. All rights reserved.
+            {t('footerCopyright').replace('{year}', new Date().getFullYear().toString())}
           </p>
         </div>
       </div>

@@ -1,8 +1,12 @@
+'use client';
+
 import React from 'react';
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen">
       {/* Hero section */}
@@ -19,10 +23,10 @@ export default function ContactPage() {
               <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div className="text-center max-w-4xl">
                   <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                      Contact Us
+                      {t('contactUs')}
                   </h1>
                   <p className="text-xl text-white">
-                    Get in touch with our team to discuss your wholesale needs.
+                    {t('contactPage.heroSubtitle')}
                   </p>
                 </div>
               </div>
@@ -36,7 +40,7 @@ export default function ContactPage() {
               <div className="flex items-center justify-center mb-4">
                 <Mail size={24} className="text-[#0B3C5D]" />
               </div>
-              <h2 className="text-2xl font-bold mb-2 text-gray-800">Get in Touch</h2>
+              <h2 className="text-2xl font-bold mb-2 text-gray-800">{t('contactSubtitle')}</h2>
               <p className="text-gray-600">
                 Email: <a href="mailto:info@bhvglobal.com" className="text-[#0B3C5D] hover:underline">info@bhvglobal.com</a>
               </p>
@@ -46,7 +50,7 @@ export default function ContactPage() {
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Full Name
+                  {t('nameLabel')}
                 </label>
                 <input
                   type="text"
@@ -59,7 +63,7 @@ export default function ContactPage() {
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
+                  {t('emailLabel')}
                 </label>
                 <input
                   type="email"
@@ -72,7 +76,7 @@ export default function ContactPage() {
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
+                  {t('messageLabel')}
                 </label>
                 <textarea
                   id="message"
@@ -88,7 +92,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full bg-[#0B3C5D] text-white py-2 px-4 rounded-md hover:bg-[#0A2F47] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0A2F47] focus:ring-offset-2"
                 >
-                  Submit
+                  {t('submitButton')}
                 </button>
               </div>
             </form>
