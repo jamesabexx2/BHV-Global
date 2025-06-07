@@ -1,18 +1,32 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero section */}
-      <section className="relative w-full h-[300px] bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80)' }}>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white">
-            Contact Us
-          </h1>
-        </div>
-      </section>
+      <div className="relative w-full h-[400px]">
+              <Image
+                src="/images/hero/contact.jpeg"
+                alt="Contact Us"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/80"></div>
+              <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+                <div className="text-center max-w-4xl">
+                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                      Contact Us
+                  </h1>
+                  <p className="text-xl text-white">
+                    Get in touch with our team to discuss your wholesale needs.
+                  </p>
+                </div>
+              </div>
+            </div>
       
       {/* Contact form section */}
       <section className="py-16 bg-white">

@@ -2,28 +2,6 @@ import Image from 'next/image';
 
 // Página principal simple que no depende de componentes cliente
 export default function Home() {
-  const brands: { name: string; logoSrc: string }[] = [
-    { name: 'Nike', logoSrc: '/images/brands/nike.jpg' },
-    { name: 'New Balance', logoSrc: '/images/brands/new-balance.png' },
-    { name: 'Adidas', logoSrc: '/images/brands/adidas.png' },
-    { name: 'KEEN', logoSrc: '/images/brands/keen.png' },
-    { name: 'Timberland', logoSrc: '/images/brands/timberland.png' },
-    { name: 'Altra', logoSrc: '/images/brands/altra.png' },
-    { name: 'UGG', logoSrc: '/images/brands/ugg.png' },
-    { name: 'Hoka', logoSrc: '/images/brands/hoka.png' },
-    { name: 'Brooks', logoSrc: '/images/brands/brooks.png' },
-    { name: 'On Running', logoSrc: '/images/brands/on-running.png' },
-    { name: 'Puma', logoSrc: '/images/brands/puma.png' },
-    { name: 'Merrell', logoSrc: '/images/brands/merrell.png' },
-    { name: 'Crocs', logoSrc: '/images/brands/crocs.png' },
-    { name: 'Ecco', logoSrc: '/images/brands/ecco.png' },
-    { name: 'Vionic', logoSrc: '/images/brands/vionic.png' },
-    { name: 'Saucony', logoSrc: '/images/brands/saucony.png' },
-    { name: 'Osprey', logoSrc: '/images/brands/osprey.png' },
-    { name: 'Fjallraven', logoSrc: '/images/brands/fjallraven.png' },
-    { name: 'Jansport', logoSrc: '/images/brands/jansport.png' },
-    { name: 'New Era', logoSrc: '/images/brands/new-era.png' },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -82,22 +60,43 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4 text-black">
               Brands We Work With
             </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We partner with premium footwear and fashion brands to deliver authentic products to retailers worldwide.
+            </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-            {brands.map((brand) => (
-              <div key={brand.name} className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm h-24 transform transition-transform hover:scale-105">
-                <div className="relative w-full h-full">
-                  <Image 
-                    src={brand.logoSrc} 
-                    alt={`${brand.name} logo`} 
-                    layout="fill"
-                    objectFit="contain"
-                    className="opacity-90 hover:opacity-100 transition-opacity"
-                  />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] hover:shadow-lg">
+              <div className="relative h-[300px] w-full">
+                <Image 
+                  src="/images/brands/brands1.jpg" 
+                  alt="Premium footwear brands" 
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-all duration-500 hover:opacity-95"
+                />
               </div>
-            ))}
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Premium Footwear</h3>
+                <p className="text-gray-600">From athletic performance to luxury casual, we source authentic footwear from the world's most trusted brands.</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] hover:shadow-lg">
+              <div className="relative h-[300px] w-full">
+                <Image 
+                  src="/images/brands/brands2.jpg" 
+                  alt="Fashion and accessories brands" 
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-all duration-500 hover:opacity-95"
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Fashion & Accessories</h3>
+                <p className="text-gray-600">Curated collections of apparel, bags, and accessories from leading fashion brands for your retail business.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
