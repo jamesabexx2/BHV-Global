@@ -1,10 +1,43 @@
+import Image from 'next/image';
+
 // Página principal simple que no depende de componentes cliente
 export default function Home() {
+  const brands: { name: string; logoSrc: string }[] = [
+    { name: 'Nike', logoSrc: '/images/brands/nike.jpg' },
+    { name: 'New Balance', logoSrc: '/images/brands/new-balance.png' },
+    { name: 'Adidas', logoSrc: '/images/brands/adidas.png' },
+    { name: 'KEEN', logoSrc: '/images/brands/keen.png' },
+    { name: 'Timberland', logoSrc: '/images/brands/timberland.png' },
+    { name: 'Altra', logoSrc: '/images/brands/altra.png' },
+    { name: 'UGG', logoSrc: '/images/brands/ugg.png' },
+    { name: 'Hoka', logoSrc: '/images/brands/hoka.png' },
+    { name: 'Brooks', logoSrc: '/images/brands/brooks.png' },
+    { name: 'On Running', logoSrc: '/images/brands/on-running.png' },
+    { name: 'Puma', logoSrc: '/images/brands/puma.png' },
+    { name: 'Merrell', logoSrc: '/images/brands/merrell.png' },
+    { name: 'Crocs', logoSrc: '/images/brands/crocs.png' },
+    { name: 'Ecco', logoSrc: '/images/brands/ecco.png' },
+    { name: 'Vionic', logoSrc: '/images/brands/vionic.png' },
+    { name: 'Saucony', logoSrc: '/images/brands/saucony.png' },
+    { name: 'Osprey', logoSrc: '/images/brands/osprey.png' },
+    { name: 'Fjallraven', logoSrc: '/images/brands/fjallraven.png' },
+    { name: 'Jansport', logoSrc: '/images/brands/jansport.png' },
+    { name: 'New Era', logoSrc: '/images/brands/new-era.png' },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1517097573548-da8a15b72060?q=80&w=1920&auto=format&fit=crop)' }}>
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      <section className="relative w-full h-[500px]">
+        <Image
+          src="/images/hero/home.jpg"
+          alt="BHV Global Hero Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/80"></div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
@@ -51,38 +84,20 @@ export default function Home() {
             </h2>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
-            {/* These would ideally be replaced with actual brand logos */}
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">Nike</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">NEW BALANCA</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">Adidas</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">KEEN</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">Timberland</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">Altra</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">UGG</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">Hoka</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">Brooks</p>
-            </div>
-            <div className="flex items-center justify-center p-4 bg-white rounded-md shadow-sm h-20">
-              <p className="font-bold text-gray-800">On Running</p>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            {brands.map((brand) => (
+              <div key={brand.name} className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm h-24 transform transition-transform hover:scale-105">
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={brand.logoSrc} 
+                    alt={`${brand.name} logo`} 
+                    layout="fill"
+                    objectFit="contain"
+                    className="opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
