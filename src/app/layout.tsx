@@ -6,6 +6,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import DynamicLangUpdater from "@/components/layout/DynamicLangUpdater";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +31,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 min-h-screen`}
       >
         <LanguageProvider>
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <DynamicLangUpdater />
+          <div className="flex flex-col">
+            <Header />
+            <main className="flex-grow bg-white">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </LanguageProvider>
       </body>
     </html>

@@ -1,79 +1,38 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-[#F5F5F5] py-10 mt-10">
+    <footer className="bg-white py-8 mt-10 border-t border-gray-200">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Company info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">BHV Global</h3>
-            <p className="text-[#666666] mb-4">{t('footerText')}</p>
+        <div className="flex flex-col items-center justify-center">
+          {/* Logo */}
+          <div className="mb-4">
+            <Image src="/bhvlogo.jpg" alt="BHV GLOBAL" width={120} height={40} className="object-contain" />
           </div>
           
-          {/* Quick links */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">{t('home')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-[#666666] hover:text-[#4169E1] transition-colors">
-                  {t('home')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/mission" className="text-[#666666] hover:text-[#4169E1] transition-colors">
-                  {t('mission')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/alliances" className="text-[#666666] hover:text-[#4169E1] transition-colors">
-                  {t('alliances')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/brands" className="text-[#666666] hover:text-[#4169E1] transition-colors">
-                  {t('brands')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-[#666666] hover:text-[#4169E1] transition-colors">
-                  {t('contactUs')}
-                </Link>
-              </li>
-            </ul>
+          {/* Contact */}
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <Mail size={16} className="text-[#0B3C5D]" />
+            <span className="text-gray-700">info@bhvglobal.com</span>
           </div>
           
-          {/* Contact info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">{t('contactUs')}</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center space-x-2">
-                <MapPin size={16} className="text-[#4169E1]" />
-                <span className="text-[#666666]">123 Global Avenue, Suite 500</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone size={16} className="text-[#4169E1]" />
-                <span className="text-[#666666]">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Mail size={16} className="text-[#4169E1]" />
-                <span className="text-[#666666]">contact@bhvglobal.com</span>
-              </li>
-            </ul>
+          {/* Social Media - Optional */}
+          <div className="flex space-x-4 mb-6">
+            {/* Add social media icons if needed */}
           </div>
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-gray-200 mt-8 pt-6 text-center">
-          <p className="text-[#666666]">
-            &copy; {new Date().getFullYear()} BHV Global. {t('footerRights')}
+        <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+          <p className="text-gray-800 text-sm">
+            {t('footerCopyright').replace('{year}', new Date().getFullYear().toString())}
           </p>
         </div>
       </div>
