@@ -79,7 +79,31 @@ export const translations = {
       p1: "At BHV GLOBAL, we connect the world's most sought-after fashion brands with businesses that sell.",
       p2: "Our mission is to provide seamless, reliable wholesale solutions — built on trust, efficiency, and deep industry insight.",
       p3: "From logistics to sourcing, we do it all with style, purpose, and a relentless commitment to your growth.",
-      p4: "Headquartered in the U.S., we serve clients across North America and select international markets."
+      p4: "Headquartered in the U.S., we serve clients across North America and select international markets.",
+      ourValuesTitle: "Our Values",
+      values: {
+        premiumQuality: {
+          title: "Premium Quality",
+          description: "We source only the highest quality products from trusted brands."
+        },
+        globalReach: {
+          title: "Global Reach",
+          description: "Serving clients across North America and select international markets."
+        },
+        customerFocus: {
+          title: "Customer Focus",
+          description: "Your success is our priority. We're committed to your satisfaction."
+        },
+        industryExpertise: {
+          title: "Industry Expertise",
+          description: "Years of experience in wholesale fashion distribution."
+        }
+      },
+      joinUs: {
+        title: "Join Our Journey",
+        description: "Partner with BHV Global and let's build success together.",
+        button: "Get Started"
+      }
     },
     // Ungating Page
     ungatingPage: {
@@ -90,11 +114,43 @@ export const translations = {
       formFullNamePlaceholder: "Full Name",
       formEmailPlaceholder: "Email Address",
       formSubmitButton: "Subscribe",
-      formContactDirectly: "Or contact us directly at:"
+      formContactDirectly: "Or contact us directly at:",
+      section1: {
+        title: "Unlock Top Brands on Amazon",
+        description: "Our ungating services help you navigate the complexities of selling restricted brands, opening up new opportunities for your business."
+      },
+      benefits: {
+        title: "Why Choose Our Ungating Service?",
+        benefit1: "Expert guidance through the entire ungating process.",
+        benefit2: "Access to a wider range of profitable products.",
+        benefit3: "Save time and avoid common pitfalls."
+      },
+      howItWorks: {
+        title: "How It Works",
+        step1: "Consultation: We assess your needs and eligibility.",
+        step2: "Documentation: We help you prepare and submit all necessary documents.",
+        step3: "Approval: Get approved to sell top brands quickly."
+      },
+      cta: {
+        title: "Ready to Expand Your Inventory?",
+        description: "Contact us today to learn more about our ungating services and start selling restricted brands.",
+        button: "Get Ungating Help"
+      }
     },
     // Contact Page
     contactPage: {
-      heroSubtitle: "Get in touch with our team to discuss your wholesale needs."
+      title: "Contact Us",
+      subtitle: "Get in touch with our team to discuss your wholesale needs.",
+      emailInfoLabel: "Email",
+      phoneInfoLabel: "Phone",
+      locationInfoLabel: "Location",
+      formHeading: "Send us a Message",
+      formSubjectLabel: "Subject",
+      formNamePlaceholder: "Your name",
+      formEmailPlaceholder: "your.email@example.com",
+      formSubjectPlaceholder: "How can we help you?",
+      formMessagePlaceholder: "Your message here...",
+      formSendButton: "Send Message"
     }
   },
   es: {
@@ -177,7 +233,31 @@ export const translations = {
       p1: "En BHV GLOBAL, conectamos las marcas de moda más buscadas del mundo con los negocios que venden.",
       p2: "Nuestra misión es proporcionar soluciones mayoristas fluidas y confiables, basadas en la confianza, la eficiencia y un profundo conocimiento de la industria.",
       p3: "Desde la logística hasta el abastecimiento, lo hacemos todo con estilo, propósito y un compromiso incansable con tu crecimiento.",
-      p4: "Con sede en EE. UU., atendemos a clientes en América del Norte y mercados internacionales selectos."
+      p4: "Con sede en EE. UU., atendemos a clientes en América del Norte y mercados internacionales selectos.",
+      ourValuesTitle: "Nuestros Valores",
+      values: {
+        premiumQuality: {
+          title: "Calidad Premium",
+          description: "Obtenemos solo productos de la más alta calidad de marcas confiables."
+        },
+        globalReach: {
+          title: "Alcance Global",
+          description: "Atendiendo a clientes en América del Norte y mercados internacionales selectos."
+        },
+        customerFocus: {
+          title: "Enfoque en el Cliente",
+          description: "Tu éxito es nuestra prioridad. Estamos comprometidos con tu satisfacción."
+        },
+        industryExpertise: {
+          title: "Experiencia en la Industria",
+          description: "Años de experiencia en la distribución mayorista de moda."
+        }
+      },
+      joinUs: {
+        title: "Únete a Nuestro Viaje",
+        description: "Asóciate con BHV Global y construyamos el éxito juntos.",
+        button: "Comenzar"
+      }
     },
     // Página de Desbloqueo
     ungatingPage: {
@@ -188,11 +268,43 @@ export const translations = {
       formFullNamePlaceholder: "Nombre Completo",
       formEmailPlaceholder: "Correo Electrónico",
       formSubmitButton: "Suscribirse",
-      formContactDirectly: "O contáctanos directamente en:"
+      formContactDirectly: "O contáctanos directamente en:",
+      section1: {
+        title: "Desbloquea las Mejores Marcas en Amazon",
+        description: "Nuestros servicios de desbloqueo te ayudan a navegar las complejidades de vender marcas restringidas, abriendo nuevas oportunidades para tu negocio."
+      },
+      benefits: {
+        title: "¿Por Qué Elegir Nuestro Servicio de Desbloqueo?",
+        benefit1: "Guía experta durante todo el proceso de desbloqueo.",
+        benefit2: "Acceso a una gama más amplia de productos rentables.",
+        benefit3: "Ahorra tiempo y evita errores comunes."
+      },
+      howItWorks: {
+        title: "Cómo Funciona",
+        step1: "Consulta: Evaluamos tus necesidades y elegibilidad.",
+        step2: "Documentación: Te ayudamos a preparar y enviar todos los documentos necesarios.",
+        step3: "Aprobación: Obtén la aprobación para vender las mejores marcas rápidamente."
+      },
+      cta: {
+        title: "¿Listo para Expandir tu Inventario?",
+        description: "Contáctanos hoy para obtener más información sobre nuestros servicios de desbloqueo y comenzar a vender marcas restringidas.",
+        button: "Obtener Ayuda para Desbloqueo"
+      }
     },
     // Página de Contacto
     contactPage: {
-      heroSubtitle: "Ponte en contacto con nuestro equipo para discutir tus necesidades mayoristas."
+      title: "Contáctanos",
+      subtitle: "Ponte en contacto con nuestro equipo para discutir tus necesidades mayoristas.",
+      emailInfoLabel: "Correo Electrónico",
+      phoneInfoLabel: "Teléfono",
+      locationInfoLabel: "Ubicación",
+      formHeading: "Envíanos un Mensaje",
+      formSubjectLabel: "Asunto",
+      formNamePlaceholder: "Tu nombre",
+      formEmailPlaceholder: "tu.correo@ejemplo.com",
+      formSubjectPlaceholder: "¿Cómo podemos ayudarte?",
+      formMessagePlaceholder: "Tu mensaje aquí...",
+      formSendButton: "Enviar Mensaje"
     }
   }
 };

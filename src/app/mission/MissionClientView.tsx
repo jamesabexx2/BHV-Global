@@ -41,20 +41,20 @@ const MissionClientView = () => {
           <div className="max-w-4xl mx-auto">
             <div className="prose lg:prose-xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-8">
-                {t('missionPage.ourMission')}
+                {t('missionTitle')}
               </h2>
               
               <div className="space-y-6 text-gray-700">
                 <p className="text-lg">
-                  {t('missionPage.missionStatement')}
+                  {t('missionText')}
                 </p>
                 
                 <h3 className="text-2xl font-semibold mt-10 mb-4">
-                  {t('missionPage.ourValues')}
+                  {t('missionPage.ourValuesTitle')}
                 </h3>
                 
                 <div className="grid md:grid-cols-2 gap-8 mt-8">
-                  {['innovation', 'excellence', 'integrity', 'collaboration'].map((value) => (
+                  {['premiumQuality', 'globalReach', 'customerFocus', 'industryExpertise'].map((value) => (
                     <div key={value} className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
                       <h4 className="text-xl font-semibold mb-3 text-blue-800">
                         {t(`missionPage.values.${value}.title`)}
