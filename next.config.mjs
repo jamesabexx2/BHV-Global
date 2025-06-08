@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true, // Necesario para exportación estáta
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,7 +12,10 @@ const nextConfig = {
       },
     ],
   },
-  // Eliminamos la configuración de i18n que es incompatible con App Router
+  // Configuración para generación estática
+  trailingSlash: true,
+  // Deshabilitar la generación de mapas de fuente para producción
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;
