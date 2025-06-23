@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
+import BrandShowcase from '@/components/features/BrandShowcase';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -9,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[350px]">
+      <section className="relative w-full h-[500px]">
         <Image
           src="/images/hero/home.jpg"
           alt="BHV Global Hero Background"
@@ -18,106 +19,117 @@ export default function Home() {
           quality={100}
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/80"></div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              {t('headerBannerText')}
+            <div className="mb-6">
+              <Image 
+                src="/images/logo.svg" 
+                alt="BHV Global Logo" 
+                width={180} 
+                height={80} 
+                className="mx-auto"
+              />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+              Global Brand Solutions
             </h1>
-            <h2 className="text-2xl md:text-3xl text-white mb-6">
-              {t('home.hero.subtitle')}
+            <h2 className="text-2xl md:text-3xl text-white mb-6 drop-shadow-md">
+              Your Partner in Brand Success
             </h2>
-            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
-              {t('home.hero.description')}
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-sm">
+              We provide comprehensive solutions for global brands seeking to optimize their market presence and performance.
             </p>
+            <div className="mt-8">
+              <a 
+                href="/contact" 
+                className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
+              >
+Get Started
+              </a>
+            </div>
           </div>
         </div>
       </section>
       
       {/* What We Do Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-black text-center">
-              {t('home.whatWeDo.title')}
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl font-bold mb-10 text-black text-center">
+              What We Do
             </h2>
-            <div className="text-lg text-gray-700 leading-relaxed space-y-6">
-              <p>
-                {t('home.whatWeDo.p1')}
-              </p>
-              <p>
-                {t('home.whatWeDo.p2')}
-              </p>
-              <p className="font-medium">
-                {t('home.whatWeDo.p3')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Brands Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-black">
-              {t('home.brands.title')}
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('home.brands.subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] hover:shadow-lg">
-              <div className="relative h-[300px] w-full">
-                <Image 
-                  src="/images/brands/brands1.jpg" 
-                  alt="Premium footwear brands" 
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-all duration-500 hover:opacity-95"
-                />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-gray-50 p-8 rounded-lg shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                <div className="text-[#0B3C5D] text-5xl mb-4 flex justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-center">Brand Development</h3>
+                <p className="text-gray-600 text-center">
+                  We help brands establish and grow their presence in global markets with strategic positioning.
+                </p>
               </div>
-              <div className="p-6 bg-white">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('home.brands.item1.title')}</h3>
-                <p className="text-gray-600">{t('home.brands.item1.description')}</p>
+              
+              <div className="bg-gray-50 p-8 rounded-lg shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                <div className="text-[#0B3C5D] text-5xl mb-4 flex justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-center">Market Optimization</h3>
+                <p className="text-gray-600 text-center">
+                  We optimize your brand's market performance through data-driven strategies and insights.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-8 rounded-lg shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                <div className="text-[#0B3C5D] text-5xl mb-4 flex justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-center">Partnership Solutions</h3>
+                <p className="text-gray-600 text-center">
+                  We create strategic partnerships that enhance your brand's reach and market penetration.
+                </p>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] hover:shadow-lg">
-              <div className="relative h-[300px] w-full">
-                <Image 
-                  src="/images/brands/brands2.jpg" 
-                  alt="Fashion and accessories brands" 
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-all duration-500 hover:opacity-95"
-                />
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('home.brands.item2.title')}</h3>
-                <p className="text-gray-600">{t('home.brands.item2.description')}</p>
-              </div>
+            <div className="text-lg text-gray-700 leading-relaxed space-y-6 max-w-4xl mx-auto">
+              <p className="font-medium text-center">
+                Our comprehensive approach ensures that your brand achieves maximum visibility and performance in today's competitive global marketplace.
+              </p>
             </div>
           </div>
         </div>
       </section>
       
+      {/* Brand Showcase Section */}
+      <BrandShowcase />
+      
       {/* Contact CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-gradient-to-br from-[#0B3C5D] to-[#072A41] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-black">
-            {t('home.cta.title')}
+          <h2 className="text-4xl font-bold mb-6 text-white">
+            Ready to Elevate Your Brand?
           </h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-            {t('home.cta.subtitle')}
+          <p className="text-xl mb-10 max-w-3xl mx-auto">
+            Contact us today to discover how our solutions can transform your brand's global presence.
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-colors text-lg font-medium"
+            className="inline-block bg-white text-[#0B3C5D] py-4 px-10 rounded-md hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
           >
-            {t('home.cta.button')}
+            Contact Us
           </a>
         </div>
       </section>
