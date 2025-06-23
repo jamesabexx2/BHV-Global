@@ -4,6 +4,7 @@ import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
+import Hero from '@/components/layout/Hero';
 const contactImage = '/images/hero/contact.jpeg';
 
 const ContactClientView = () => {
@@ -11,25 +12,11 @@ const ContactClientView = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Hero section */}
-      <div className="relative w-full h-[350px]">
-        <Image
-          src={contactImage}
-          alt="Contact Us"
-          fill
-          style={{
-            objectFit: 'cover',
-          }}
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/80"></div>
-        <div className="container relative z-10 h-full flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('contactPage.title')}</h1>
-            <p className="text-xl">{t('contactPage.subtitle')}</p>
-          </div>
-        </div>
-      </div>
+      <Hero
+        title={t('contactPage.title')}
+        subtitle={t('contactPage.subtitle')}
+        backgroundImage={contactImage}
+      />
 
       {/* Contact Info */}
       <div className="container py-16">

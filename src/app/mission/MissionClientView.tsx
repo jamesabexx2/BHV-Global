@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Hero from '@/components/layout/Hero';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const missionImage = '/images/hero/our-mission.jpeg';
@@ -11,29 +12,12 @@ const MissionClientView = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Hero section */}
-      <div className="relative w-full h-[350px]">
-        <Image
-          src={missionImage}
-          alt="Our Mission"
-          fill
-          style={{
-            objectFit: 'cover',
-          }}
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/80"></div>
-        <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
-          <div className="text-center max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {t('missionTitle')}
-            </h1>
-            <p className="text-xl text-white">
-              {t('missionPage.heroSubtitle')}
-            </p>
-          </div>
-        </div>
-      </div>
+      <Hero
+        title={t('missionTitle')}
+        subtitle={t('missionPage.heroSubtitle')}
+        backgroundImage={missionImage}
+        showLogo={false}
+      />
 
       {/* Mission content */}
       <section className="py-16 bg-white">

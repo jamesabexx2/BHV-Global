@@ -30,11 +30,17 @@ const MobileNavLink = ({ href, text, onClick }: { href: string; text: string; on
 
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
-  // Cerrar menú al cambiar el tamaño de la pantalla a desktop
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsOpen(false);
@@ -60,26 +66,22 @@ const Header = () => {
     ${isOpen ? 'translate-x-0' : 'translate-x-full'}
   `;
 
+  const headerClasses = `
+    w-full fixed top-0 left-0 z-50 transition-all duration-300
+    ${isScrolled ? 'bg-[#092e47] shadow-lg' : 'bg-transparent'}
+  `;
+
   return (
-    <header className="w-full bg-[#092e47] relative">
-      {/* Top banner */}
-      <div className="hidden md:block w-full bg-[#0B3C5D] text-white py-2 px-4 text-center">
-        <p className="text-sm md:text-base">
-          {t('headerBannerText')}
-        </p>
-      </div>
-      
-      <div className="w-full">
-        <div className="container mx-auto px-4 h-[80px] flex items-center justify-between">
+    <header className={headerClasses}>
+      <div className="container mx-auto px-4 h-[70px] flex items-center justify-between">
           {/* Logo */}
-          <div className="w-[150px] h-[50px] relative">
+                    <div className="w-[140px] h-[45px] relative">
             <Link href="/">
               <div className="w-full h-full flex items-center">
                 <Image 
-                  src="/bhvlogo.jpg" 
+                  src="/bhvlogo-horizontal.jpg" 
                   alt="BHV GLOBAL" 
-                  width={150} 
-                  height={50} 
+                  fill
                   className="object-contain" 
                 />
               </div>
@@ -87,11 +89,11 @@ const Header = () => {
           </div>
           
           {/* Navigation links - Desktop */}
-          <nav className="hidden md:flex items-center space-x-1 h-full">
-            <NavLink href="/" text={t('navHome')} onClick={closeMenu} />
-            <NavLink href="/mission" text={t('mission')} onClick={closeMenu} />
-            <NavLink href="/ungating" text={t('ungating')} onClick={closeMenu} />
-            <NavLink href="/contact" text={t('contactUs')} onClick={closeMenu} />
+                    <nav className="hidden md:flex items-center h-full">
+                        <NavLink href="/" text={t('navHome') || 'Home'} onClick={closeMenu} />
+            <NavLink href="/mission" text={t('mission') || 'Mission'} onClick={closeMenu} />
+            <NavLink href="/ungating" text={t('ungating') || 'Ungating'} onClick={closeMenu} />
+            <NavLink href="/contact" text={t('contactUs') || 'Contact Us'} onClick={closeMenu} />
           </nav>
 
           {/* Mobile menu button */}
@@ -114,10 +116,11 @@ const Header = () => {
           </div>
           
           {/* Language selector */}
-          <button 
-            onClick={toggleLanguage}
-            className="flex items-center space-x-2 font-medium text-white hover:bg-white/20 px-4 py-2 rounded-md transition-all duration-300"
-          >
+                    <div className="hidden md:flex items-center">
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center space-x-2 font-medium text-white hover:bg-white/20 px-4 py-2 rounded-md transition-all duration-300"
+            >
             <Globe size={20} />
             <span>{language === 'en' ? 'ES' : 'EN'}</span>
           </button>

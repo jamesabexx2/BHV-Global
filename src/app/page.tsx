@@ -3,54 +3,31 @@
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import BrandShowcase from '@/components/features/BrandShowcase';
+import Hero from '@/components/layout/Hero';
 
 export default function Home() {
   const { t } = useLanguage();
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full h-[500px]">
-        <Image
-          src="/images/hero/home.jpg"
-          alt="BHV Global Hero Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/80"></div>
-        <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
-          <div className="text-center">
-            <div className="mb-6">
-              <Image 
-                src="/images/logo.svg" 
-                alt="BHV Global Logo" 
-                width={180} 
-                height={80} 
-                className="mx-auto"
-              />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              Global Brand Solutions
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-white mb-6 drop-shadow-md">
-              Your Partner in Brand Success
-            </h2>
-            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-sm">
-              We provide comprehensive solutions for global brands seeking to optimize their market presence and performance.
-            </p>
-            <div className="mt-8">
-              <a 
-                href="/contact" 
-                className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
-              >
-Get Started
-              </a>
-            </div>
-          </div>
+      <Hero
+        title="Global Brand Solutions"
+        subtitle="Your Partner in Brand Success"
+        backgroundImage="/images/hero/home.jpg"
+        showLogo={true}
+      >
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-sm">
+          We provide comprehensive solutions for global brands seeking to optimize their market presence and performance.
+        </p>
+        <div className="mt-8">
+          <a 
+            href="/contact" 
+            className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
+          >
+            Get Started
+          </a>
         </div>
-      </section>
+      </Hero>
       
       {/* What We Do Section */}
       <section className="py-24 bg-white">
