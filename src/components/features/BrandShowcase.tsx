@@ -100,8 +100,8 @@ const BrandShowcase = () => {
           <div className="brand-carousel-container py-8">
             <Slider {...settings}>
               {brands.map((brand, index) => (
-                <div key={index} className="px-4 flex justify-center items-center">
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden p-4 h-32 flex items-center justify-center transform transition-all duration-300 hover:shadow-lg hover:scale-105">
+                <div key={index} className="px-4 py-4 flex justify-center items-center relative">
+                  <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <div className="relative h-24 w-full">
                       <Image 
                         src={brand.logo}
@@ -145,7 +145,11 @@ const BrandShowcase = () => {
           opacity: 1;
         }
         
-        .brand-carousel-container .slick-track {
+        .slick-slide {
+          margin: 0 10px;
+        }
+
+        .slick-track {
           display: flex;
           align-items: center;
         }
