@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Hero from '@/components/layout/Hero';
 import { useLanguage } from '@/contexts/LanguageContext';
 

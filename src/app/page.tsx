@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import BrandShowcase from '@/components/features/BrandShowcase';
 import Hero from '@/components/layout/Hero';
@@ -17,14 +16,14 @@ export default function Home() {
         showLogo={true}
       >
         <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-sm">
-          We provide comprehensive solutions for global brands seeking to optimize their market presence and performance.
+          {t('home.hero.description')}
         </p>
         <div className="mt-8">
           <a 
             href="/contact" 
             className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
           >
-            Get Started
+            {t('home.cta.button')}
           </a>
         </div>
       </Hero>
@@ -34,7 +33,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl font-bold mb-10 text-black text-center">
-              What We Do
+              {t('home.whatWeDo.title')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div className="bg-gray-50 p-8 rounded-lg shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
@@ -61,7 +60,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">Market Optimization</h3>
                 <p className="text-gray-600 text-center">
-                  We optimize your brand's market performance through data-driven strategies and insights.
+                  We optimize your brand&apos;s market performance through data-driven strategies and insights.
                 </p>
               </div>
               
@@ -76,14 +75,14 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">Partnership Solutions</h3>
                 <p className="text-gray-600 text-center">
-                  We create strategic partnerships that enhance your brand's reach and market penetration.
+                  We create strategic partnerships that enhance your brand&apos;s reach and market penetration.
                 </p>
               </div>
             </div>
             
             <div className="text-lg text-gray-700 leading-relaxed space-y-6 max-w-4xl mx-auto">
               <p className="font-medium text-center">
-                Our comprehensive approach ensures that your brand achieves maximum visibility and performance in today's competitive global marketplace.
+                Our comprehensive approach ensures that your brand achieves maximum visibility and performance in today&apos;s competitive global marketplace.
               </p>
             </div>
           </div>
@@ -97,16 +96,16 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-br from-[#0B3C5D] to-[#072A41] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6 text-white">
-            Ready to Elevate Your Brand?
+            {t('home.finalCta.title')}
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto">
-            Contact us today to discover how our solutions can transform your brand's global presence.
+            {t('home.finalCta.subtitle')}
           </p>
           <a 
             href="/contact" 
             className="inline-block bg-white text-[#0B3C5D] py-4 px-10 rounded-md hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
           >
-            Contact Us
+            {t('home.finalCta.button')}
           </a>
         </div>
       </section>

@@ -3,7 +3,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Image from 'next/image';
 import Hero from '@/components/layout/Hero';
 const contactImage = '/images/hero/contact.jpeg';
 

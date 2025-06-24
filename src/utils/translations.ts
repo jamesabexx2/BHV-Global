@@ -71,6 +71,11 @@ export const translations = {
         title: "Ready to grow your business with premium wholesale fashion?",
         subtitle: "Connect with our team to discuss your inventory needs and discover how BHV GLOBAL can support your retail success.",
         button: "Contact Us Now"
+      },
+      finalCta: {
+        title: "Ready to Elevate Your Brand?",
+        subtitle: "Contact us today to discover how our solutions can transform your brand's global presence.",
+        button: "Contact Us"
       }
     },
     // Mission Page
@@ -225,6 +230,11 @@ export const translations = {
         title: "¿Listo para hacer crecer tu negocio con moda mayorista premium?",
         subtitle: "Conéctate con nuestro equipo para discutir tus necesidades de inventario y descubrir cómo BHV GLOBAL puede apoyar tu éxito minorista.",
         button: "Contáctanos Ahora"
+      },
+      finalCta: {
+        title: "¿Listo para Elevar Tu Marca?",
+        subtitle: "Contáctanos hoy para descubrir cómo nuestras soluciones pueden transformar la presencia global de tu marca.",
+        button: "Contáctanos"
       }
     },
     // Página de Misión

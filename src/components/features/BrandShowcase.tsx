@@ -2,13 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useLanguage } from '@/contexts/LanguageContext';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const BrandShowcase = () => {
-  const { t } = useLanguage();
   const [slidesToShow, setSlidesToShow] = useState(5);
   
   // Update slides to show based on screen width
