@@ -13,7 +13,7 @@ export default function Home() {
         title="Global Brand Solutions"
         subtitle="Your Partner in Brand Success"
         backgroundImage="/images/hero/home.jpg"
-        showLogo={true}
+        showLogo={false}
       >
         <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-sm">
           {t('home.hero.description')}
