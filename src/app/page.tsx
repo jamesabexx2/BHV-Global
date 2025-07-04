@@ -18,10 +18,10 @@ export default function Home() {
         <p className="text-lg md:text-xl text-white max-w-3xl mx-auto drop-shadow-sm">
           {t('home.hero.description')}
         </p>
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           <a 
             href="/contact" 
-            className="inline-block bg-[#0B3C5D] text-white py-3 px-8 rounded-md hover:bg-[#0A2F47] transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
+            className="inline-block bg-[#0B3C5D] text-white py-2 sm:py-3 px-6 sm:px-8 rounded-md hover:bg-[#0A2F47] transition-all duration-300 transform hover:scale-105 text-base sm:text-lg font-medium shadow-lg"
           >
             {t('home.cta.button')}
           </a>
@@ -29,13 +29,13 @@ export default function Home() {
       </Hero>
       
       {/* What We Do Section */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-10 text-black text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-10 text-black text-center">
               {t('home.whatWeDo.title')}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
               <div className="bg-gray-50 p-8 rounded-lg shadow-md transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
                 <div className="text-[#0B3C5D] text-5xl mb-4 flex justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -93,17 +93,17 @@ export default function Home() {
       <BrandShowcase />
       
       {/* Contact CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-[#0B3C5D] to-[#072A41] text-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-[#0B3C5D] to-[#072A41] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white">
             {t('home.finalCta.title')}
           </h2>
-          <p className="text-xl mb-10 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto px-2">
             {t('home.finalCta.subtitle')}
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-white text-[#0B3C5D] py-4 px-10 rounded-md hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-lg font-medium shadow-lg"
+            className="inline-block bg-white text-[#0B3C5D] py-3 sm:py-4 px-8 sm:px-10 rounded-md hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base sm:text-lg font-medium shadow-lg"
           >
             {t('home.finalCta.button')}
           </a>
