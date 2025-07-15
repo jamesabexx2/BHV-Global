@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Globe, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 // Componente para enlaces de escritorio
 const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void }) => (
@@ -32,7 +32,7 @@ const MobileNavLink = ({ href, text, onClick }: { href: string; text: string; on
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,9 +56,7 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
-  };
+
 
   // Estilos para la transición del menú móvil
   const mobileMenuClasses = `
@@ -115,16 +113,7 @@ const Header = () => {
             </nav>
           </div>
           
-          {/* Language selector */}
-                    <div className="hidden md:flex items-center">
-            <button 
-              onClick={toggleLanguage}
-              className="flex items-center space-x-2 font-medium text-white hover:bg-white/20 px-4 py-2 rounded-md transition-all duration-300"
-            >
-            <Globe size={20} />
-            <span>{language === 'en' ? 'ES' : 'EN'}</span>
-          </button>
-        </div>
+          
       </div>
     </header>
   );
