@@ -11,17 +11,9 @@ interface HeroProps {
 
 const Hero = ({ title, subtitle, backgroundImage, showLogo = false, children }: HeroProps) => {
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[550px] flex flex-col justify-center">
-      <Image
-        src={backgroundImage}
-        alt="Hero Background"
-        fill
-        style={{ objectFit: 'cover' }}
-        quality={100}
-        priority
-        className="z-0"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/80 z-10"></div>
+    <section className="relative w-full min-h-[500px] md:min-h-[550px] flex flex-col justify-center bg-gray-800">
+
+
       
       <div className="container mx-auto px-4 py-12 md:py-16 relative z-20 flex flex-col items-center justify-center">
         {showLogo && (
