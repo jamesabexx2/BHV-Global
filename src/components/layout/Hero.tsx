@@ -4,18 +4,17 @@ import React from 'react';
 interface HeroProps {
   title: string;
   subtitle: string;
-  backgroundImage: string;
   showLogo?: boolean;
   children?: React.ReactNode;
 }
 
-const Hero = ({ title, subtitle, backgroundImage, showLogo = false, children }: HeroProps) => {
+const Hero = ({ title, subtitle, showLogo = false, children }: HeroProps) => {
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[550px] flex flex-col justify-center bg-gray-800">
+    <section className="w-full py-20 md:py-28" style={{ backgroundColor: 'var(--secondary)' }}>
 
 
       
-      <div className="container mx-auto px-4 py-12 md:py-16 relative z-20 flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 relative z-20 flex flex-col items-center justify-center">
         {showLogo && (
           <div className="mb-6 bg-white/90 p-3 rounded-lg shadow-md">
             <Image 
@@ -29,10 +28,10 @@ const Hero = ({ title, subtitle, backgroundImage, showLogo = false, children }: 
         )}
         
         <div className="text-center mt-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg px-2">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
             {title}
           </h1>
-          <h2 className="text-xl sm:text-2xl md:text-3xl text-white mb-4 md:mb-6 drop-shadow-md px-2">
+          <h2 className="text-xl md:text-2xl mb-6" style={{ color: 'var(--text-secondary)' }}>
             {subtitle}
           </h2>
           {children}

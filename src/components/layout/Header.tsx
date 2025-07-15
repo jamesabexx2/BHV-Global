@@ -11,10 +11,13 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
 // Componente para enlaces de escritorio
-const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void }) => (
+const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void; isScrolled: boolean }) => (
   <a
     href={href}
-    className="font-medium text-white hover:bg-white/20 px-5 py-3 h-full flex items-center transition-all duration-300"
+    className="font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-secondary"
+    style={{ color: 'var(--text-primary)' }}
+    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--secondary)'; }}
+    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
     onClick={(e) => {
       e.preventDefault();
       gsap.to(window, { duration: 1, scrollTo: href, ease: 'power2.inOut' });
@@ -29,7 +32,8 @@ const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick:
 const MobileNavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void }) => (
   <a
     href={href}
-    className="text-white text-xl py-3 px-4 rounded-md hover:bg-white/20 transition-colors duration-200 block"
+    className="text-xl py-3 px-4 rounded-md hover:bg-white/20 transition-colors duration-200 block"
+    style={{ color: 'var(--text-on-accent)' }}
     onClick={(e) => {
       e.preventDefault();
       gsap.to(window, { duration: 1, scrollTo: href, ease: 'power2.inOut' });
@@ -80,11 +84,11 @@ const Header = () => {
 
   const headerClasses = `
     w-full fixed top-0 left-0 z-50 transition-all duration-300
-    ${isScrolled ? 'bg-[#092e47] shadow-lg' : 'bg-transparent'}
+    ${isScrolled ? 'shadow-md' : ''}
   `;
 
   return (
-    <header className={headerClasses}>
+    <header className={headerClasses} style={{ background: isScrolled ? 'var(--background)' : 'transparent' }}>
       <div className="container mx-auto px-4 h-[70px] flex items-center justify-between">
           {/* Logo */}
                     <div className="w-[140px] h-[45px] relative">
@@ -101,18 +105,18 @@ const Header = () => {
           </div>
           
           {/* Navigation links - Desktop */}
-                    <nav className="hidden md:flex items-center h-full">
-                        <NavLink href="#home" text={t('navHome') || 'Home'} onClick={closeMenu} />
-            <NavLink href="#mission" text={t('mission') || 'Mission'} onClick={closeMenu} />
-            <NavLink href="#brands" text={t('brands') || 'Brands'} onClick={closeMenu} />
-            <NavLink href="#ungating" text={t('ungating') || 'Ungating'} onClick={closeMenu} />
-            <NavLink href="#contact" text={t('contactUs') || 'Contact Us'} onClick={closeMenu} />
+                    <nav className="hidden md:flex items-center space-x-2">
+            <NavLink href="#home" text={t('navHome') || 'Home'} onClick={closeMenu} isScrolled={isScrolled} />
+            <NavLink href="#mission" text={t('mission') || 'Mission'} onClick={closeMenu} isScrolled={isScrolled} />
+            <NavLink href="#brands" text={t('brands') || 'Brands'} onClick={closeMenu} isScrolled={isScrolled} />
+            <NavLink href="#contact" text={t('contactUs') || 'Contact Us'} onClick={closeMenu} isScrolled={isScrolled} />
           </nav>
 
           {/* Mobile menu button */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2 rounded-md hover:bg-white/20 focus:outline-none"
+            className="md:hidden p-2 rounded-md focus:outline-none hover:bg-secondary"
+            style={{ color: 'var(--text-primary)' }}
             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -121,11 +125,10 @@ const Header = () => {
           {/* Mobile menu */}
           <div className={mobileMenuClasses}>
             <nav className="flex flex-col space-y-4 py-4">
-              <MobileNavLink href="#home" text={t('navHome')} onClick={closeMenu} />
-              <MobileNavLink href="#mission" text={t('mission')} onClick={closeMenu} />
-              <MobileNavLink href="#brands" text={t('brands')} onClick={closeMenu} />
-              <MobileNavLink href="#ungating" text={t('ungating')} onClick={closeMenu} />
-              <MobileNavLink href="#contact" text={t('contactUs')} onClick={closeMenu} />
+              <MobileNavLink href="#home" text={t('navHome') || 'Home'} onClick={closeMenu} />
+              <MobileNavLink href="#mission" text={t('mission') || 'Mission'} onClick={closeMenu} />
+              <MobileNavLink href="#brands" text={t('brands') || 'Brands'} onClick={closeMenu} />
+              <MobileNavLink href="#contact" text={t('contactUs') || 'Contact Us'} onClick={closeMenu} />
             </nav>
           </div>
           

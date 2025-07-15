@@ -1,32 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const BrandsSection = () => {
-  const [slidesToShow, setSlidesToShow] = useState(5);
-  
-  // Update slides to show based on screen width
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setSlidesToShow(2);
-      } else if (window.innerWidth < 1024) {
-        setSlidesToShow(3);
-      } else if (window.innerWidth < 1280) {
-        setSlidesToShow(4);
-      } else {
-        setSlidesToShow(5);
-      }
-    };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
   
   const brands = [
     { name: 'Nike', logo: '/images/brands/logos/NIKE.png' },
@@ -52,7 +32,7 @@ const BrandsSection = () => {
     dots: false,
     infinite: true,
     speed: 1000,
-    slidesToShow: slidesToShow,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -83,13 +63,13 @@ const BrandsSection = () => {
   };
   
   return (
-    <section id="brands" className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <section id="brands" className="py-16 md:py-24" style={{ backgroundColor: 'var(--secondary)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
             Brands & Sectors
           </h2>
-          <p className="text-xl text-[#555555] max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             We work with leading brands across various sectors
           </p>
         </div>
@@ -99,7 +79,7 @@ const BrandsSection = () => {
             <Slider {...settings}>
               {brands.map((brand, index) => (
                 <div key={index} className="px-4 py-4 flex justify-center items-center relative">
-                  <div className="bg-white rounded-lg shadow-md p-4 flex items-center justify-center transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <div className="rounded-lg shadow-md p-4 flex items-center justify-center transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1" style={{ backgroundColor: 'var(--background)' }}>
                     <div className="relative h-24 w-full">
                       <Image 
                         src={brand.logo}
@@ -135,7 +115,7 @@ const BrandsSection = () => {
         
         .slick-prev:before, .slick-next:before {
           font-size: 30px;
-          color: #0B3C5D;
+          color: var(--text-primary);
           opacity: 0.75;
         }
         

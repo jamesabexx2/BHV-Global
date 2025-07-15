@@ -3,10 +3,8 @@ export const translations = {
     // Navigation
     navHome: "Home",
     mission: "Mission",
-    alliances: "Alliances",
     brands: "Brands",
     contactUs: "Contact Us",
-    ungating: "Ungating",
     
     // Header
     headerBannerText: "Where Brands Meet Business",
@@ -110,38 +108,6 @@ export const translations = {
         button: "Get Started"
       }
     },
-    // Ungating Page
-    ungatingPage: {
-      title: "Ungating Services",
-      heroSubtitle: "Join our exclusive mailing list and gain access to expert support, documentation, and early brand opportunities.",
-      p1: "Looking to get ungated for major fashion brands on Amazon?",
-      formTitle: "Subscribe to Our Ungating List",
-      formFullNamePlaceholder: "Full Name",
-      formEmailPlaceholder: "Email Address",
-      formSubmitButton: "Subscribe",
-      formContactDirectly: "Or contact us directly at:",
-      section1: {
-        title: "Unlock Top Brands on Amazon",
-        description: "Our ungating services help you navigate the complexities of selling restricted brands, opening up new opportunities for your business."
-      },
-      benefits: {
-        title: "Why Choose Our Ungating Service?",
-        benefit1: "Expert guidance through the entire ungating process.",
-        benefit2: "Access to a wider range of profitable products.",
-        benefit3: "Save time and avoid common pitfalls."
-      },
-      howItWorks: {
-        title: "How It Works",
-        step1: "Consultation: We assess your needs and eligibility.",
-        step2: "Documentation: We help you prepare and submit all necessary documents.",
-        step3: "Approval: Get approved to sell top brands quickly."
-      },
-      cta: {
-        title: "Ready to Expand Your Inventory?",
-        description: "Contact us today to learn more about our ungating services and start selling restricted brands.",
-        button: "Get Ungating Help"
-      }
-    },
     // Contact Page
     contactPage: {
       title: "Contact Us",
@@ -162,10 +128,8 @@ export const translations = {
     // Navegación
     navHome: "Inicio",
     mission: "Misión",
-    alliances: "Alianzas",
     brands: "Marcas",
     contactUs: "Contáctanos",
-    ungating: "Desbloqueo", // Or a more contextually appropriate translation like "Acceso a Marcas"
 
     // Encabezado
     headerBannerText: "Donde las Marcas se Encuentran con los Negocios",
@@ -269,38 +233,7 @@ export const translations = {
         button: "Comenzar"
       }
     },
-    // Página de Desbloqueo
-    ungatingPage: {
-      title: "Servicios de Desbloqueo",
-      heroSubtitle: "Únete a nuestra lista de correo exclusiva y obtén acceso a soporte experto, documentación y oportunidades tempranas de marcas.",
-      p1: "¿Buscas desbloquear grandes marcas de moda en Amazon?",
-      formTitle: "Suscríbete a Nuestra Lista de Desbloqueo",
-      formFullNamePlaceholder: "Nombre Completo",
-      formEmailPlaceholder: "Correo Electrónico",
-      formSubmitButton: "Suscribirse",
-      formContactDirectly: "O contáctanos directamente en:",
-      section1: {
-        title: "Desbloquea las Mejores Marcas en Amazon",
-        description: "Nuestros servicios de desbloqueo te ayudan a navegar las complejidades de vender marcas restringidas, abriendo nuevas oportunidades para tu negocio."
-      },
-      benefits: {
-        title: "¿Por Qué Elegir Nuestro Servicio de Desbloqueo?",
-        benefit1: "Guía experta durante todo el proceso de desbloqueo.",
-        benefit2: "Acceso a una gama más amplia de productos rentables.",
-        benefit3: "Ahorra tiempo y evita errores comunes."
-      },
-      howItWorks: {
-        title: "Cómo Funciona",
-        step1: "Consulta: Evaluamos tus necesidades y elegibilidad.",
-        step2: "Documentación: Te ayudamos a preparar y enviar todos los documentos necesarios.",
-        step3: "Aprobación: Obtén la aprobación para vender las mejores marcas rápidamente."
-      },
-      cta: {
-        title: "¿Listo para Expandir tu Inventario?",
-        description: "Contáctanos hoy para obtener más información sobre nuestros servicios de desbloqueo y comenzar a vender marcas restringidas.",
-        button: "Obtener Ayuda para Desbloqueo"
-      }
-    },
+
     // Página de Contacto
     contactPage: {
       title: "Contáctanos",
