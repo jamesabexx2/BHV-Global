@@ -1,32 +1,45 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+
 import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 // Componente para enlaces de escritorio
 const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void }) => (
-  <Link 
-    href={href} 
+  <a
+    href={href}
     className="font-medium text-white hover:bg-white/20 px-5 py-3 h-full flex items-center transition-all duration-300"
-    onClick={onClick}
+    onClick={(e) => {
+      e.preventDefault();
+      gsap.to(window, { duration: 1, scrollTo: href, ease: 'power2.inOut' });
+      onClick();
+    }}
   >
     {text}
-  </Link>
+  </a>
 );
 
 // Componente para enlaces móviles
 const MobileNavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void }) => (
-  <Link 
-    href={href} 
+  <a
+    href={href}
     className="text-white text-xl py-3 px-4 rounded-md hover:bg-white/20 transition-colors duration-200 block"
-    onClick={onClick}
+    onClick={(e) => {
+      e.preventDefault();
+      gsap.to(window, { duration: 1, scrollTo: href, ease: 'power2.inOut' });
+      onClick();
+    }}
   >
     {text}
-  </Link>
+  </a>
 );
+
 
 
 const Header = () => {
@@ -38,17 +51,18 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsOpen(false);
       }
     };
 
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   // Cerrar menú al hacer clic en un enlace
@@ -74,7 +88,7 @@ const Header = () => {
       <div className="container mx-auto px-4 h-[70px] flex items-center justify-between">
           {/* Logo */}
                     <div className="w-[140px] h-[45px] relative">
-            <Link href="/">
+            <a href="#home" onClick={(e) => { e.preventDefault(); gsap.to(window, { duration: 1, scrollTo: '#home', ease: 'power2.inOut' }); closeMenu(); }}> 
               <div className="w-full h-full flex items-center">
                 <Image 
                   src="/bhvlogo-horizontal.jpg" 
@@ -83,15 +97,16 @@ const Header = () => {
                   className="object-contain" 
                 />
               </div>
-            </Link>
+            </a>
           </div>
           
           {/* Navigation links - Desktop */}
                     <nav className="hidden md:flex items-center h-full">
-                        <NavLink href="/" text={t('navHome') || 'Home'} onClick={closeMenu} />
-            <NavLink href="/mission" text={t('mission') || 'Mission'} onClick={closeMenu} />
-            <NavLink href="/ungating" text={t('ungating') || 'Ungating'} onClick={closeMenu} />
-            <NavLink href="/contact" text={t('contactUs') || 'Contact Us'} onClick={closeMenu} />
+                        <NavLink href="#home" text={t('navHome') || 'Home'} onClick={closeMenu} />
+            <NavLink href="#mission" text={t('mission') || 'Mission'} onClick={closeMenu} />
+            <NavLink href="#brands" text={t('brands') || 'Brands'} onClick={closeMenu} />
+            <NavLink href="#ungating" text={t('ungating') || 'Ungating'} onClick={closeMenu} />
+            <NavLink href="#contact" text={t('contactUs') || 'Contact Us'} onClick={closeMenu} />
           </nav>
 
           {/* Mobile menu button */}
@@ -106,10 +121,11 @@ const Header = () => {
           {/* Mobile menu */}
           <div className={mobileMenuClasses}>
             <nav className="flex flex-col space-y-4 py-4">
-              <MobileNavLink href="/" text={t('navHome')} onClick={closeMenu} />
-              <MobileNavLink href="/mission" text={t('mission')} onClick={closeMenu} />
-              <MobileNavLink href="/ungating" text={t('ungating')} onClick={closeMenu} />
-              <MobileNavLink href="/contact" text={t('contactUs')} onClick={closeMenu} />
+              <MobileNavLink href="#home" text={t('navHome')} onClick={closeMenu} />
+              <MobileNavLink href="#mission" text={t('mission')} onClick={closeMenu} />
+              <MobileNavLink href="#brands" text={t('brands')} onClick={closeMenu} />
+              <MobileNavLink href="#ungating" text={t('ungating')} onClick={closeMenu} />
+              <MobileNavLink href="#contact" text={t('contactUs')} onClick={closeMenu} />
             </nav>
           </div>
           

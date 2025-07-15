@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const BrandShowcase = () => {
+const BrandsSection = () => {
   const [slidesToShow, setSlidesToShow] = useState(5);
   
   // Update slides to show based on screen width
@@ -83,7 +83,7 @@ const BrandShowcase = () => {
   };
   
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <section id="brands" className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-black">
@@ -156,4 +156,4 @@ const BrandShowcase = () => {
   );
 };
 
-export default BrandShowcase;
+export default BrandsSection;
