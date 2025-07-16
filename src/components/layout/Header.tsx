@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollToPlugin);
 const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick: () => void; }) => (
   <a
     href={href}
-    className="font-medium px-4 py-2 rounded-md transition-all duration-300 hover:bg-secondary text-[var(--text-primary)]"
+    className="relative inline-block group font-medium px-4 py-2 text-[var(--text-primary)] transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:scale-x-0 after:origin-left after:h-[2px] after:bg-[var(--primary)] after:transition-transform after:duration-300 hover:after:scale-x-100"
     onClick={(e) => {
       e.preventDefault();
       gsap.to(window, { duration: 1, scrollTo: href, ease: 'power2.inOut' });
