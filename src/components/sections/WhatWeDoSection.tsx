@@ -7,11 +7,7 @@ import { FaShippingFast, FaBoxes, FaSearchDollar } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface WhatWeDoSectionProps {
-  t: (key: string) => string;
-}
-
-const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({ t }) => {
+const WhatWeDoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -62,15 +58,18 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({ t }) => {
 
   const services = [
     {
-      key: 'wholesale',
+      title: 'Wholesale Distribution',
+      description: 'We provide a wide range of high-demand products at competitive wholesale prices, ensuring your inventory is always stocked with the best.',
       icon: <FaBoxes className="w-12 h-12 mx-auto text-accent" />,
     },
     {
-      key: 'sourcing',
+      title: 'Product Sourcing',
+      description: 'Leveraging our extensive network, we find and procure specific products tailored to your market needs, no matter how niche.',
       icon: <FaSearchDollar className="w-12 h-12 mx-auto text-accent" />,
     },
     {
-      key: 'fulfillment',
+      title: 'Logistics & Fulfillment',
+      description: 'Our end-to-end logistics solutions handle everything from warehousing to shipping, ensuring timely and efficient delivery to your customers.',
       icon: <FaShippingFast className="w-12 h-12 mx-auto text-accent" />,
     },
   ];
@@ -83,28 +82,28 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({ t }) => {
     >
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold mb-4 text-primary">
-          {t('home.whatWeDo.title')}
+          What We Do
         </h2>
         
         <div className="grid md:grid-cols-3 gap-12 my-12">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
-              key={service.key}
+              key={index}
               className="service-card p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-2xl font-semibold mb-3 text-secondary">
-                {t(`home.whatWeDo.services.${service.key}.title`)}
+                {service.title}
               </h3>
               <p className="text-gray-600">
-                {t(`home.whatWeDo.services.${service.key}.description`)}
+                {service.description}
               </p>
             </div>
           ))}
         </div>
 
         <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto">
-          {t('home.whatWeDo.closing')}
+          We are dedicated to providing a seamless and efficient experience, helping your business thrive in a competitive global market.
         </p>
       </div>
     </section>

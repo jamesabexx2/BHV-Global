@@ -2,11 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useLanguage } from '@/contexts/LanguageContext';
+
 import { Mail } from 'lucide-react';
 
 const Footer = () => {
-  const { t } = useLanguage();
   
   return (
     <footer className="bg-white py-8 mt-10 border-t border-gray-200">
@@ -32,7 +31,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-center">
           <p className="text-gray-800 text-sm">
-            {t('footerCopyright').replace('{year}', new Date().getFullYear().toString())}
+            {`© ${new Date().getFullYear()} BHV Global. All rights reserved.`}
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
+
 import Hero from '@/components/layout/Hero';
 import MissionSection from '@/components/sections/MissionSection';
 import WhatWeDoSection from '@/components/sections/WhatWeDoSection';
@@ -9,13 +9,11 @@ import BrandsSection from '@/components/sections/BrandsSection';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
-  const { t } = useLanguage();
-
   return (
     <div id="home" className="min-h-screen">
       <Hero
-        title={t('home.hero.subtitle')}
-        subtitle={t('home.hero.description')}
+        title="Your Trusted Partner for Global Product Distribution"
+        subtitle="We specialize in connecting top-tier brands with a global market, ensuring quality and reliability every step of the way."
         showLogo={false}
       >
         <div className="mt-8">
@@ -24,16 +22,16 @@ export default function Home() {
             className="inline-block text-white py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 text-lg font-semibold shadow-lg"
             style={{ backgroundColor: 'var(--accent)', color: 'var(--text-on-accent)' }}
           >
-            {t('home.cta.button')}
+            Contact Us
           </a>
         </div>
       </Hero>
 
-      <MissionSection t={t} />
-      <WhatWeDoSection t={t} />
+      <MissionSection />
+      <WhatWeDoSection />
       <BrandsSection />
       
-      <ContactSection t={t} />
+      <ContactSection />
     </div>
   );
 }

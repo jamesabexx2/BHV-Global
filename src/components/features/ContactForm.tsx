@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+
 
 const ContactForm = () => {
-  const { t } = useLanguage();
   
   const [formData, setFormData] = useState({
     name: '',
@@ -58,7 +57,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            {t('nameLabel')}
+            Name
           </label>
           <input
             type="text"
@@ -73,7 +72,7 @@ const ContactForm = () => {
         
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            {t('emailLabel')}
+            Email
           </label>
           <input
             type="email"
@@ -88,7 +87,7 @@ const ContactForm = () => {
         
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-            {t('phoneLabel')}
+            Phone
           </label>
           <input
             type="tel"
@@ -102,7 +101,7 @@ const ContactForm = () => {
         
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            {t('messageLabel')}
+            Message
           </label>
           <textarea
             id="message"
@@ -121,7 +120,7 @@ const ContactForm = () => {
             disabled={status === 'loading'}
             className="w-full bg-[#4169E1] text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
-            {status === 'loading' ? 'Sending...' : t('submitButton')}
+            {status === 'loading' ? 'Sending...' : 'Submit'}
           </button>
         </div>
       </form>
