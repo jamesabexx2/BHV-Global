@@ -21,7 +21,7 @@ const UngatingSection: React.FC<UngatingSectionProps> = ({ t }) => {
     const cards = section.querySelectorAll('.ungating-card');
     const ctaBox = section.querySelector('.ungating-cta');
     const button = section.querySelector('.ungating-button');
-    const elems = [title, description, ...Array.from(cards), ctaBox].filter(Boolean) as HTMLElement[];
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
