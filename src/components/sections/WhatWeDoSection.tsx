@@ -54,6 +54,10 @@ const WhatWeDoSection = () => {
       }, '-=0.3');
     }
 
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', () => gsap.to(card, { scale: 1.05, duration: 0.3 }));
+      card.addEventListener('mouseleave', () => gsap.to(card, { scale: 1, duration: 0.3 }));
+    });
   }, []);
 
   const services = [

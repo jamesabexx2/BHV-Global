@@ -1,5 +1,11 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface HeroProps {
   title: string;
@@ -9,8 +15,26 @@ interface HeroProps {
 }
 
 const Hero = ({ title, subtitle, showLogo = false, children }: HeroProps) => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const titleEl = section.querySelector('h1');
+    const subtitleEl = section.querySelector('h2');
+    const btnEl = section.querySelector('a');
+    const elems = [titleEl, subtitleEl, btnEl].filter(Boolean) as HTMLElement[];
+    gsap.from(elems, {
+      opacity: 0,
+      y: 50,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: 'power3.out',
+    });
+  }, []);
+
   return (
-    <section className="w-full py-20 md:py-28" style={{ backgroundColor: 'var(--secondary)' }}>
+    <section ref={sectionRef} className="w-full py-20 md:py-28" style={{ backgroundColor: 'var(--secondary)' }}>
 
 
       

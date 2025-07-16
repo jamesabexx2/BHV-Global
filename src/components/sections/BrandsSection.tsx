@@ -1,13 +1,41 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const BrandsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   
+    useEffect(() => {
+    if (!sectionRef.current) return;
+    const items = sectionRef.current.querySelectorAll('.slick-slide');
+    gsap.from(items, {
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => gsap.to(item, { scale: 1.05, duration: 0.3, transformOrigin: 'center center' }));
+      item.addEventListener('mouseleave', () => gsap.to(item, { scale: 1, duration: 0.3 }));
+    });
+  }, []);
+
   const brands = [
     { name: 'Nike', logo: '/images/brands/logos/NIKE.png' },
     { name: 'New Balance', logo: '/images/brands/logos/NEW BALANCE.png' },
@@ -63,7 +91,7 @@ const BrandsSection = () => {
   };
   
   return (
-    <section id="brands" className="py-16 md:py-24" style={{ backgroundColor: 'var(--secondary)' }}>
+    <section id="brands" ref={sectionRef} className="py-16 md:py-24" style={{ backgroundColor: 'var(--secondary)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>

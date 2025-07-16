@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Image from 'next/image';
 
@@ -43,10 +43,14 @@ const MobileNavLink = ({ href, text, onClick }: { href: string; text: string; on
 
 
 const Header = () => {
+  const headerRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (headerRef.current) {
+      gsap.from(headerRef.current, { y: -100, opacity: 0, duration: 0.6, ease: 'power3.out' });
+    }
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -83,7 +87,7 @@ const Header = () => {
   `;
 
   return (
-    <header className={headerClasses} style={{ background: isScrolled ? 'var(--background)' : 'transparent' }}>
+    <header ref={headerRef} className={headerClasses} style={{ background: isScrolled ? 'var(--background)' : 'transparent' }}>
       <div className="container mx-auto px-4 h-[70px] flex items-center justify-between">
           {/* Logo */}
                     <div className="w-[140px] h-[45px] relative">
