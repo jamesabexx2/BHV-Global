@@ -3,6 +3,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Hero from '@/components/layout/Hero';
 import MissionSection from '@/components/sections/MissionSection';
+import WhatWeDoSection from '@/components/sections/WhatWeDoSection';
 import BrandsSection from '@/components/sections/BrandsSection';
 
 import ContactSection from '@/components/sections/ContactSection';
@@ -29,6 +30,7 @@ export default function Home() {
       </Hero>
 
       <MissionSection t={t} />
+      <WhatWeDoSection t={t} />
       <BrandsSection />
       
       <ContactSection t={t} />

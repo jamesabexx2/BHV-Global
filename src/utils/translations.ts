@@ -49,9 +49,21 @@ export const translations = {
       },
       whatWeDo: {
         title: "What We Do",
-        p1: "BHV GLOBAL is a U.S.-based wholesale distributor specializing in brand-name footwear, fashion, and accessories.",
-        p2: "We help Amazon sellers, fashion retailers, and B2B buyers source fast-moving inventory with total confidence.",
-        p3: "From curated selections to bulk orders, we simplify wholesale — so you can focus on selling."
+        services: {
+          wholesale: {
+            title: "Wholesale Distribution",
+            description: "We supply premium footwear and apparel from top global brands, ready for immediate delivery."
+          },
+          sourcing: {
+            title: "Stock Sourcing",
+            description: "We offer access to exclusive, in-demand inventory at competitive wholesale prices."
+          },
+          fulfillment: {
+            title: "Global Fulfillment",
+            description: "We ensure reliable, fast, and precise shipments to retailers worldwide."
+          }
+        },
+        closing: "With BHV Global, you get the products your customers want — delivered with the speed, reliability, and service your business deserves."
       },
       brands: {
         title: "Brands We Work With",
@@ -173,10 +185,22 @@ export const translations = {
         description: "En BHV Global, hemos estado redefiniendo la distribución mayorista desde 2018. Especializados en calzado y ropa de primera calidad, conectamos a los minoristas directamente con marcas globales icónicas, de forma rápida, confiable y sin interrupciones. Nuestro enfoque en una logística inteligente y nuestro compromiso con asociaciones confiables potencian su negocio para mantenerse a la vanguardia y entregar lo que los clientes quieren, cuando lo quieren."
       },
       whatWeDo: {
-        title: "Lo Que Hacemos",
-        p1: "BHV GLOBAL es un distribuidor mayorista con sede en EE. UU. especializado en calzado, moda y accesorios de marca.",
-        p2: "Ayudamos a vendedores de Amazon, minoristas de moda y compradores B2B a obtener inventario de rápido movimiento con total confianza.",
-        p3: "Desde selecciones curadas hasta pedidos al por mayor, simplificamos la venta mayorista — para que puedas concentrarte en vender."
+        title: "Qué Hacemos",
+        services: {
+          wholesale: {
+            title: "Distribución Mayorista",
+            description: "Suministramos calzado y ropa de primera calidad de las principales marcas mundiales, listos para entrega inmediata."
+          },
+          sourcing: {
+            title: "Abastecimiento de Stock",
+            description: "Ofrecemos acceso a inventario exclusivo y de alta demanda a precios de mayorista competitivos."
+          },
+          fulfillment: {
+            title: "Cumplimiento Global",
+            description: "Garantizamos envíos confiables, rápidos y precisos a minoristas de todo el mundo."
+          }
+        },
+        closing: "Con BHV Global, obtienes los productos que tus clientes quieren, entregados con la velocidad, confiabilidad y el servicio que tu negocio merece."
       },
       brands: {
         title: "Marcas con las que Trabajamos",
