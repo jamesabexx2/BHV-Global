@@ -44,8 +44,8 @@ export const translations = {
     // Home Page
     home: {
       hero: {
-        subtitle: "BHV GLOBAL – Wholesale Fashion, Delivered",
-        description: "Powering resellers and retailers with direct access to premium shoes, bags, and apparel — trusted by top brands, shipped with precision."
+        subtitle: "Trusted Worldwide, Delivered Precisely: BHV Global",
+        description: "At BHV Global, we’ve been redefining wholesale distribution since 2018. Specializing in premium footwear and apparel, we connect retailers directly to iconic global brands — quickly, reliably, and seamlessly. Our focus on smart logistics and commitment to reliable partnerships empower your business to stay ahead and deliver what customers want, when they want it."
       },
       whatWeDo: {
         title: "What We Do",
@@ -169,8 +169,8 @@ export const translations = {
     // Página de Inicio
     home: {
       hero: {
-        subtitle: "BHV GLOBAL – Moda al por Mayor, Entregada",
-        description: "Potenciando a revendedores y minoristas con acceso directo a calzado, bolsos y prendas de primera calidad — con la confianza de las mejores marcas, enviado con precisión."
+        subtitle: "Confianza Mundial, Entrega Precisa: BHV Global",
+        description: "En BHV Global, hemos estado redefiniendo la distribución mayorista desde 2018. Especializados en calzado y ropa de primera calidad, conectamos a los minoristas directamente con marcas globales icónicas, de forma rápida, confiable y sin interrupciones. Nuestro enfoque en una logística inteligente y nuestro compromiso con asociaciones confiables potencian su negocio para mantenerse a la vanguardia y entregar lo que los clientes quieren, cuando lo quieren."
       },
       whatWeDo: {
         title: "Lo Que Hacemos",
